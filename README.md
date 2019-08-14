@@ -52,11 +52,11 @@ mysql > GRANT REPLICATION SLAVE, REPLICATION CLIENT ON \*.\* TO 'slave'@'%';
 # 配置slave  
 配置Master(主)一样，在Slave配置文件my.cnf中添加如下配置  
 [mysqld]  
-## 设置server_id,注意要唯一  
+设置server_id,注意要唯一  
 server-id=2  
-## 开启二进制日志功能，以备Slave作为其它Slave的Master时使用  
+开启二进制日志功能，以备Slave作为其它Slave的Master时使用  
 log-bin=mysql-slave-bin     
-## relay_log配置中继日志    
+relay_log配置中继日志    
 relay_log=edu-mysql-relay-bin     
 # 进入master容器中的mysql    
 mysql > show master status;  
