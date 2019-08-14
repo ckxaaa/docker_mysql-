@@ -40,8 +40,8 @@ root@cb6b7fdbc98a:/# apt-get install vim -y   //下载vim命令
 root@cb6b7fdbc98a:/# vim /etc/mysql/my.cnf  
 添加如下配置  
 [mysqld]  
-server-id=1    //同一局域网内注意要唯一 
-log-bin=mysql-bin //开启二进制日志功能，可以随便取（关键） 
+server-id=1    //同一局域网内注意要唯一   
+log-bin=mysql-bin //开启二进制日志功能，可以随便取（关键）  
 容器内重启mysql服务  
 service mysql restart  
 再次启动容器  
