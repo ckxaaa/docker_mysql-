@@ -48,7 +48,7 @@ service mysql restart
 docker start master  
 进入容器，创建数据同步用户，给予用户slave REPLICATION SLAVE权限和REPLICATION CLIENT权限，用于同步数据  
 mysql > CREATE USER 'slave'@'%' IDENTIFIED BY '123456';  
-mysql > GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'slave'@'%';  
+mysql > GRANT REPLICATION SLAVE, REPLICATION CLIENT ON \*.\* TO 'slave'@'%';  
 # 配置slave  
 配置Master(主)一样，在Slave配置文件my.cnf中添加如下配置  
 [mysqld]  
