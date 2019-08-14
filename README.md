@@ -66,7 +66,7 @@ mysql > show master status;
  
 # File和Position字段的值后面将会用到，在后面的操作完成之前，需要保证Master库不能做任何操作，否则将会引起状态变化，File和Position字段的值变化。  
 # 查找master容器独立ip  
-[root@docker ~]# docker inspect --format='{{.NetworkSettings.IPAdders}}'  容器id||容器名  
+[root@docker ~]# docker inspect --format='{{.NetworkSettings.IPAddress}}'  容器id||容器名  
 172.17.0.3  
 # 进入slave容器中mysql：  
 mysql > change master to master_host='172.17.0.3', master_user='slave', master_password='123456', master_port=3306, master_log_file='mysql-bin.000002', master_log_pos=313, master_connect_retry=30;  
@@ -87,38 +87,4 @@ SlaveIORunning 和 SlaveSQLRunning 都是Yes，说明主从复制已经开启。
 pos不对  
 
 检查Master的 Position  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
