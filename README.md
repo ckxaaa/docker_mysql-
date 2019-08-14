@@ -60,11 +60,10 @@ log-bin=mysql-slave-bin
 relay_log=edu-mysql-relay-bin     
 # 进入master容器中的mysql    
 mysql > show master status;  
-+------------------+----------+--------------+------------------+-------------------+    
+  
 | File             | Position | Binlog_Do_DB | Binlog_Ignore_DB | Executed_Gtid_Set |    
-+------------------+----------+--------------+------------------+-------------------+    
 | mysql-bin.000002 |      313 |              |                  |                   |    
-+------------------+----------+--------------+------------------+-------------------+   
+ 
 # File和Position字段的值后面将会用到，在后面的操作完成之前，需要保证Master库不能做任何操作，否则将会引起状态变化，File和Position字段的值变化。  
 # 查找master容器独立ip  
 [root@docker ~]# docker inspect --format='{{.NetworkSettings.IPAdders}}'  容器id||容器名  
