@@ -17,12 +17,12 @@
 更新yum缓存：  
 [root@docker ~]# yum makecache fast  
 安装docker-ce：    
-[root@docker ~]# yum -y install docker-ce
-启动docker后台服务：  
-[root@docker ~]#systemctl start docker
-# 拉取docker镜像（使用5.7版本的mysql）  
-[root@docker ~]# docker pull mysql:5.7  
-# 可以查看镜像
+[root@docker ~]# yum -y install docker-ce  
+启动docker后台服务：    
+[root@docker ~]#systemctl start docker  
+# 拉取docker镜像（使用5.7版本的mysql）    
+[root@docker ~]# docker pull mysql:5.7    
+# 可以查看镜像  
 [root@docker ~]# docker images  
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE  
 docker.io/mysql     5.7                 f6509bac4980        3 weeks ago         373 MB  
